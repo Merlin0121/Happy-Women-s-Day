@@ -1,0 +1,55 @@
+body {
+  background: #131b21;
+}
+/* Để thông điệp nằm tuyệt đối so với container */
+.container {
+  width: 50%;
+  margin: 0 auto;
+  position: relative; 
+}
+
+/* Style cho thông điệp */
+.message {
+  position: absolute;
+  top: 45%; /* Căn hơi xích lên trên để nhường chỗ cho hoa hồng */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Oleo Script', cursive;
+  font-size: 5rem;
+  color: #F7A998; /* Màu hồng tone-sur-tone với hoa */
+  text-align: center;
+  opacity: 0; /* Ẩn đi chờ GSAP */
+  pointer-events: none;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+  width: 100%;
+  z-index: 10; /* Đảm bảo chữ đè lên trên hoa */
+}
+
+/* Ẩn các path của cụm hoa hồng trung tâm trước khi GSAP chạy */
+#CenterStem, #CenterRoseHead {
+  visibility: hidden;
+}
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+svg#flower-frame {
+  height: 90vh;
+  width: 100%;
+}
+
+#Footer_group_1_,
+[id^=PinkFlowerGroup],
+[id^=BaseGroup] path,
+[id^=LeafGroup] path,
+path[id^=Stroke],
+g[id^=BudGroup] g[id^=BudGroup] g[id^=Bud],
+#Bud8_1_,
+#Bud10_1_,
+#Bud23_1_,
+#Bud26_1_,
+[id^=Dots],
+[id^=Flourish] {
+  visibility: hidden;
+}
